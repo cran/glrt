@@ -1,10 +1,10 @@
 \name{LinkfuncDir}
 \alias{LinkfuncDir}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Direvative of the link function used in tests gLRT2 and gLRT3
+\title{Direvative of the link function
 }
 \description{
-Direvative of the link function \eqn{\eta(x), \eta'(x),} used in \code{gLRT2} and \code{gLRT3}.
+Direvative of the link function \eqn{\eta(x), \eta'(x),} used in \code{\link{gLRT2}},  \code{\link{gLRT3}}, and \code{\link{gLRT4}},.
 }
 \usage{
 LinkfuncDir(x, rho = 0, gamma = 0)
@@ -15,10 +15,10 @@ LinkfuncDir(x, rho = 0, gamma = 0)
 a value between 0 and 1
 }
   \item{rho}{
-a non-negative parameter
+a non-negative parameter in \eqn{[0, 1]}
 }
   \item{gamma}{
-a non-negative parameter
+a non-negative parameter in \eqn{[0, 1]}
 }
 }
 %\details{

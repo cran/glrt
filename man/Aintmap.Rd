@@ -5,7 +5,7 @@
 Create A matrix and intmap
 }
 \description{
-This function is borrowed from package \code{interval} by Professor Michael Fay and used in function \code{\link{ModifiedEMICM}} to provide an NPMLE for a survival function. The A matrix is an n by m matrix of zeros and ones, where each row represents one of n failure times, and each column represents a possible interval for the nonparametric maximum likelihood estimate (NPMLE). The function \code{Aintmap} creates an A matrix and associated intmap from left and right intervals (L and R) which may not include the boundary of the interval (using Lin or Rin). The matrix intmap denotes the intervals of the potential jumps in the distribution of the NPMLE, and its attribute LRin denotes whether to include each of the interval or not.
+This function is borrowed from package \code{interval} by Professor Michael Fay and used in function \code{\link{ModifiedEMICM}} to provide an NPMLE of a survival function. The \eqn{A} matrix is an \eqn{n} by \eqn{m} matrix of zeros and ones, where each row represents one of n failure times, and each column represents a possible interval for the nonparametric maximum likelihood estimate (NPMLE). The function \code{Aintmap} creates an \eqn{A} matrix and associated intmap from left and right intervals (\code{L} and \code{R}) which may not include the boundary of the interval (using \code{Lin} or \code{Rin}). The matrix intmap denotes the intervals of the potential jumps in the distribution of the NPMLE, and its attribute LRin denotes whether to include each of the interval or not.
 }
 \usage{
 Aintmap(L, R, Lin = NULL, Rin = NULL)
@@ -36,9 +36,9 @@ A list with two objects:
 %\references{
 %% ~put references to the literature/web site here ~
 %}
-%\author{
-%Michael Fay
-%}
+\author{
+Michael Fay
+}
 %\note{
 %%  ~~further notes~~
 %}

@@ -1,7 +1,7 @@
 CensorType <-
-function(A, inf) 
+function(A, inf = Inf) 
 {
-cens = rep(2, nrow(A))  
+cens = as.integer(rep(2, nrow(A)))  
 if(any(A[,1] == 0 && A[,2] == inf))
 {
 warning("Observation: (0, inf)!")

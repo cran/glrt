@@ -7,8 +7,10 @@ else if(x == 1)
 temp = 1
 else
 {
-warning("first argument in linkfunc() is not in [0, 1]!")
-return(NULL)
+	if(x < 0)
+		stop("The first argument in linkfunc() is not negative, so quit")
+	else
+		stop("The first argument in linkfunc() is larger than 1, so quit!")
 }
 temp
 }

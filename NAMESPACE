@@ -1,1 +1,2 @@
-exportPattern("^[[:alpha:]]+")
+importFrom(survival, survdiff)
+export(Aintmap, AlphaCross, Bisect, CensorType, Chisqstat3, gLRT, gLRT1, gLRT2, gLRT3, gLRT4, Linkfunc, LinkfuncDir, ModifiedEMICM, ModifiedEMICMmac, PMGA, rescaleP, ScoreStat, ScoreTest, StartEnd, Teststat1, Teststat2, Teststat3, Teststat4, Var1, Var2, Var3, VarScoreStat)

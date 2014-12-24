@@ -5,7 +5,7 @@
 Determine types of censoring based on censoring intervals
 }
 \description{
-This function determines types of censoring based on censoring intervals. It is called by function \code{\link{gLRT1}}, \code{\link{gLRT2}}, and \code{\link{gLRT3}}.
+This function determines types of censoring based on censoring intervals. It is called by function \code{\link{gLRT1}}, \code{\link{gLRT2}}, \code{\link{gLRT3}}, and \code{\link{gLRT4}}.
 }
 \usage{
 CensorType(A, inf)

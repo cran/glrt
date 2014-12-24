@@ -1,5 +1,5 @@
 ModifiedEMICM <-
-function (A, EMstep = TRUE, ICMstep = TRUE, keepiter = FALSE, tol = 1e-07, maxiter = 1000) 
+function (A, EMstep = TRUE, ICMstep = TRUE, keepiter = FALSE, tol = 1e-06, maxiter = 1000) 
 {
     if (ncol(A) == 2 && all(A[, 2] >= A[, 1])) 
     {

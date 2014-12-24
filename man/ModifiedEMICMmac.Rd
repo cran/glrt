@@ -5,7 +5,7 @@
 An interval function in package "Icens"
 }
 \description{
-A modified version of \code{EMICMmac} in package \code{Icens} to avoid the error when calling function \code{\link{EMICM}} whafter specifying ICMstep = FALSE. The error is caused by change the type of an undeclared vector \code{weights}. 
+A modified version of \code{EMICMmac} in package \code{Icens} to avoid the error when calling function \code{EMICM} when specifying ICMstep = FALSE. The error is caused by changing the type of an undeclared vector \code{weights}. 
 }
 %\usage{
 %ModifiedEMICMmac(A, EMstep = TRUE, ICMstep = TRUE, keepiter = FALSE, tol = 1e-07, tolbis = 1e-07, maxiter = 1000)
@@ -41,13 +41,13 @@ A modified version of \code{EMICMmac} in package \code{Icens} to avoid the error
 \author{Qiang Zhao and Jianguo Sun
 }
 \note{
-It is not to be called by the user.
+It is used in \code{\link{ModifiedEMICM}} and not to be called by the user.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{ModifiedEMICM}}, \code{\link{EMICMmac}}
+\code{\link{ModifiedEMICM}}
 }
 %\examples{
 %}

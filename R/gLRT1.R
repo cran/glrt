@@ -1,11 +1,15 @@
 gLRT1 <-
-function(A, k=2, M=50, EMstep=TRUE, ICMstep=TRUE, tol=1e-07, maxiter=1000, inf=Inf)
+function(A, k=2, M=50, EMstep=TRUE, ICMstep=TRUE, tol=1e-06, maxiter=1000, inf=Inf)
 {
+A[A[,2]==inf,2] = Inf
 if(ncol(A) == 3 && all(A[,2] >= A[,1]) && length(unique(A[,3])) == k && all(A[,3]>=0) && all(A[,3]< k) )
 {
 AA = A[,-3] 
 trt = A[,3]
 est = ModifiedEMICM(AA, EMstep=EMstep, ICMstep=ICMstep, tol=tol, maxiter=maxiter)
+tiny = .Machine$double.eps*100
+est$sigma = ifelse(abs(est$sigma) < tiny, 0, est$sigma)
+est$sigma = ifelse(abs(1.0 - est$sigma) < tiny, 1.0, est$sigma)
 cens = CensorType(A, inf)
 u = Teststat1(trt, k, est, cens)
 var = Var1(A, est, trt, cens, k=k, M=M)

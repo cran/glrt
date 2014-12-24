@@ -1,5 +1,5 @@
 ModifiedEMICMmac <-
-function (A, EMstep = TRUE, ICMstep = TRUE, keepiter = FALSE, tol = 1e-07, tolbis = 1e-07, maxiter = 1000)
+function (A, EMstep = TRUE, ICMstep = TRUE, keepiter = FALSE, tol = 1e-06, tolbis = 1e-07, maxiter = 1000)
 
 {
 
@@ -115,7 +115,7 @@ FUN = "/"), 1, sum)
 
             ndir <- diff(c(0, temp[2:(m + 1)])) - pvec
 
-            pvec <- Bisect(tA, pvec, ndir, Meps, tolbis = 1e-07)
+            pvec <- Bisect(tA, pvec, ndir, Meps, tolbis)
 
             sigma <- cumsum(pvec)
 

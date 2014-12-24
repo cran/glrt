@@ -10,24 +10,25 @@ FF = c(0, F)
 index = est$ppairs
 
 Q = 0
+tiny = .Machine$double.eps
 for(i in 1:length(cens))
 {
 if(cens[i] == 1)  
 {
 Fu = F[index[i, 2]]
-if(Fu > 0)  Q = Q + ( (Linkfunc(Fu, rho, gamma) - c0)/Fu )**2 
+if(Fu > 0 + tiny)  Q = Q + ( (Linkfunc(Fu, rho, gamma) - c0)/Fu )**2 
 }
 else if(cens[i] == 2)  
 {
 Fu = FF[index[i, 1]]
 Fv = F[index[i, 2]]
-if(Fv - Fu > 0)  Q = Q + ( (Linkfunc(Fv, rho, gamma) - Linkfunc(Fu, rho, gamma)) / (Fv - Fu) )**2
+if(Fv - Fu > 0 + tiny)  Q = Q + ( (Linkfunc(Fv, rho, gamma) - Linkfunc(Fu, rho, gamma)) / (Fv - Fu) )**2
 
 }
 else  
 {
 Fv = FF[index[i, 1]]
-if(Fv < 1.0)  Q = Q + ( (c0 - Linkfunc(Fv, rho, gamma)) / (1 - Fv) )**2
+if(Fv < 1.0 - tiny)  Q = Q + ( (c0 - Linkfunc(Fv, rho, gamma)) / (1 - Fv) )**2
 }
 }
 

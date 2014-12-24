@@ -1,11 +1,10 @@
-\name{StartEnd}
-\alias{StartEnd}
+\name{AlphaCross}
+\alias{AlphaCross}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Compute the indices for the end points of censoring intervals
-}
+Compute a matrix of at-risk indicators}
 \description{
-The function computes the indices for the end points of censoring intervals over the intmaps when estimating a survival function when called in function \code{\link{ModifiedEMICM}}. It is also used in \code{\link{Teststat4}} of \code{gLRT4}.
+This function determines whether each observation in one group is at risk at different times or time intervals based on the observations of another group.
 }
 %\usage{
 %StartEnd(alpha)
@@ -33,13 +32,13 @@ The function computes the indices for the end points of censoring intervals over
 Qiang Zhao and Jianguo Sun
 }
 \note{
-It is not to be called by the user.
+It is used in \code{Teststat4} and not to be called by the user.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
- \code{\link{ModifiedEMICM}}, \code{\link{Teststat4}}
+ \code{\link{Teststat4}}
 }
 %\examples{
 %}

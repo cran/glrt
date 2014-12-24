@@ -5,7 +5,7 @@
 Compute the chi-square test statistic and degrees of freedom for test gLRT3
 }
 \description{
-This function computes the chi-square test statistic and degrees of freedom for test \code{gLRT3}. The degree of freedom depends on whether there are exact observations and proportions of exact observations in each treatment.
+This function computes the chi-square test statistic and degrees of freedom for test \code{\link{gLRT3}}. The degree of freedom depends on whether there are exact observations and proportions of exact observations in each treatment.
 }
 \usage{
 Chisqstat3(U, V, counts)
@@ -13,13 +13,13 @@ Chisqstat3(U, V, counts)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{U}{
-k-vector of the test statistic in \code{gLRT3}, where k is number of treatments.
+\eqn{k}-vector of the test statistic in \code{gLRT3}, where \eqn{k} is number of treatments.
 }
   \item{V}{
-estimated k by k covariance matrix of \code{U} 
+estimated \eqn{k} by \eqn{k} covariance matrix of \code{U} 
 }
   \item{counts}{
- a k by 2 matrix containing number of exact and non-exact observations for each treatment
+ a \eqn{k} by 2 matrix containing number of exact and non-exact observations for each treatment
 }
 }
 \value{

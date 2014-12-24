@@ -10,9 +10,10 @@ ghat = -diff(Ghat)
 
 b = rep(0, m+1)
 h = rep(0, m+1)
+tiny = .Machine$double.eps
 for(j in 1:(m+1))
 {
-if(Ghat[j] != 0)
+if(Ghat[j] > 0 + tiny)
 {
 h[j] = Ghat[j] * log(Ghat[j])
 b[j] = Ghat[j] * log(Ghat[j]) + Ghat[j] * log(Ghat[j])^2

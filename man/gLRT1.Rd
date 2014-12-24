@@ -4,16 +4,16 @@
 Conduct a generalized logrank test for interval-censored data
 }
 \description{
-Function \code{gLRT1} conducts a k(>=2)-sample test for interval-censored survival data. The test is based on Zhao and Sun (2004). The null hypothesis is that all k survival functions of the failure time are the same, and the alternative hypothesis is that not all functions are the same. 
+Function \code{gLRT1} conducts a \eqn{k}(>=2)-sample test for interval-censored survival data. The test is based on Zhao and Sun (2004). The null hypothesis is that all \eqn{k} survival functions of the failure time are the same, and the alternative hypothesis is that not all functions are the same. 
 }
 \usage{
-gLRT1(A, k = 2, M = 50, EMstep = TRUE, ICMstep = TRUE, tol = 1e-07, 
+gLRT1(A, k = 2, M = 50, EMstep = TRUE, ICMstep = TRUE, tol = 1e-06, 
 maxiter = 1000, inf = Inf)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{A}{
-an n by 3 data matrix with the censoring interval of the format (L, R] in columns 1 & 2 and treatmentment indicator ranging from 0 to k-1 in column 3.
+an \eqn{n} by 3 data matrix with the censoring interval of the format \eqn{(L, R]} in columns 1 & 2 and treatmentment indicator ranging from 0 to \eqn{k-1} in column 3.
 }
   \item{k}{
 number of treatments. The default is 2.
@@ -28,7 +28,7 @@ a boolean variable indicating whether to take an EM step in the iteration when e
 a boolean variable indicating whether to take an ICM step in the iteration when estimating the common distribution function. The default is TRUE.
 }
   \item{tol}{
-the maximal L1 distance between successive estimates before stopping iteration when estimating the common distribution function. The default is 1.0e-7.
+the maximal \eqn{L_1} distance between successive estimates before stopping iteration when estimating the common distribution function. The default is 1.0e-6.
 }
   \item{maxiter}{
 the maximal number of iterations to perform before stopping when estimating the common distribution function. The default is 1000.}
@@ -37,9 +37,11 @@ the maximal number of iterations to perform before stopping when estimating the 
 \details{
 Under the null hypothesis, the NPMLE of the common distribution function is computed by function \code{\link{ModifiedEMICM}}.
 
-Censoring interval for each observation take the form (Li, Ri]. For exact observations, Li = Ri.
+Censoring interval for each observation take the form \eqn{(L_i, R_i]}. For exact observations, \eqn{L_i = R_i}.
 
-The chi-square test used in \code{gLRT1} has k-1 degrees of freedom.
+The estimated covariance of the test statistic depends on random resampling. It is normal that two runs of the test \code{gLRT1} yield different test results. 
+
+The chi-square test used in \code{gLRT1} has \eqn{k-1} degrees of freedom.
 }
 \value{
 The function returns an object containing the following components: 
@@ -52,6 +54,8 @@ The function returns an object containing the following components:
 }
 \references{
 Q. Zhao and J. Sun (2004), "Generalized Log-rank Test for Mixed-Censored Failure Time Data", Statistics in Medicine, 23: 1621-1629.
+
+Q. Zhao (2012), "gLRT - A New R Package for Analyzing Interval-censored Survival Data", Interval-Censored Time-to-Event Data: Methods and Applications, CRC Press, 377-396.
 }
 \author{
 Qiang Zhao and Jianguo Sun
@@ -63,7 +67,7 @@ Qiang Zhao and Jianguo Sun
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{gLRT}}, \code{\link{gLRT2}},  \code{\link{gLRT3}},  \code{\link{ScoreTest}}  
+\code{\link{gLRT}}, \code{\link{gLRT2}},  \code{\link{gLRT3}},  \code{\link{gLRT4}}, \code{\link{ScoreTest}}  
 }
 
 \examples{
